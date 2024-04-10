@@ -5,3 +5,5 @@ Barnard's exact test is an unconditional test for the association between a bina
 To install this R package, run `install.packages("remotes"); remotes::install_github("limintao-pku/BNDtest")`.  
 To load this package, run `library(BNDtest)`.  
 See how to use this package by running `?Barnard_test`.  
+
+We have used this function mainly for unbalanced 2 by 2 tables. The sample size of the smaller exposure group is < 200, and that of the larger group is ~ 2000. The algorithm typically finishes within seconds or minutes. This function can also be used for smaller or larger tables.  
