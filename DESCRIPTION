@@ -1,0 +1,11 @@
+Package: BNDtest
+Type: Package
+Title: Barnard's exact test for large unbalanced 2 by 2 contingency tables
+Version: 1.0
+Date: 2024-04-09
+Author: Mintao Li
+Maintainer: Mintao Li <limintao@pku.edu.cn>
+Description: Barnard's exact test is an unconditional test for the association between a binary exposure and binary outcome. It is generally more powerful than Fisher's exact test when the data are collected in unconditional manners.
+License: GPL (>= 2)
+Imports: Rcpp (>= 1.0.7)
+LinkingTo: Rcpp
