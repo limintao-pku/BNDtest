@@ -43,6 +43,8 @@ If \code{return_data = F}, the \emph{P} value is directly returned. Otherwise, a
 
 \note{
 We have used this function mainly for unbalanced 2 by 2 tables. The sample size of the smaller exposure group is < 200, and that of the larger group is ~ 2000. The algorithm typically finishes within seconds or minutes. This function can also be used for smaller or larger tables.
+
+Note that users should keep the arrangement of the 2 by 2 contingency table fixed (e.g., the first row is always the exposed group). Do not try to select a smaller \emph{P} value by swapping the rows. Otherwise, the type I error rate may exceed the nominal level. The reason for the phenomenon that the \emph{P} values may be different is that we do not include all candidate tables that share the same smallest \emph{P} in a single iteration. This processing can further increase (not always) the statistical power. The above phenomenon mainly occurs when the table is perfectly balanced (the sample sizes of the exposure groups are the same).
 }
 
 \references{
