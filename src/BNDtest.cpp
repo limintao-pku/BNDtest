@@ -45,19 +45,6 @@ int which_loc(int loc_i, int loc_j, IntegerVector select_i, IntegerVector select
     return out;
 }
 
-//bool in_loc(int loc_i, int loc_j, std::vector<int> select_i, std::vector<int> select_j, int l) {
-//    bool out = false;
-//    for (int i = 0; i < l; ++i) {
-//        if (loc_i == select_i[i]) {
-//            if (loc_j == select_j[i]) {
-//                out = true;
-//                break;
-//            }
-//        }
-//    }
-//    return out;
-//}
-
 bool in_loc(int loc_i, int loc_j, std::vector<int> select_i, std::vector<int> select_j, int l) {
     bool out = false;
     for (int i = l - 1; i > -1; --i) {
