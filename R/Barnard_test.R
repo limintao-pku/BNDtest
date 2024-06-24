@@ -1,11 +1,22 @@
 Barnard_test<-function(mat,alternative=c("two.sided","greater","less"),n_p=101L,trace=F,
-                       return_data=F,data_previous=NULL){
+                       return_data=F,data_previous=NULL,n12_max=1e6L,warn_n12_max=T){
   t0<-Sys.time()
   mode(mat)<-"integer"
   n1<-sum(mat[1,]);n2<-sum(mat[2,])
   stopifnot(n1>0&n2>0)
   c1<-mat[1,1];c2<-mat[2,1]
   alternative<-match.arg(alternative)
+  if(n1*n2>n12_max){
+    if(warn_n12_max){
+      warning("Maximum value of n1 * n2 is reached. Fisher exact test is used instead.")
+    }
+    p.fisher<-fisher.test(mat,alternative=alternative)$p.value
+    if(return_data){
+      return(list(p.value=p.fisher,data=NULL))  
+    }else{
+      return(p.fisher)
+    }
+  }
   stopifnot(n_p>=1L)
   if(c1/n1==c2/n2&alternative=="two.sided"){
     if(return_data){
