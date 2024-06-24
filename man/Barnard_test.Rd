@@ -9,12 +9,12 @@ This function is designed to implement Barnard's original algorithm (CSM) for re
 
 \usage{
 Barnard_test(mat, alternative=c("two.sided","greater","less"), n_p=101L, trace=F,
-             return_data=F, data_previous=NULL)
+             return_data=F, data_previous=NULL, n12_max=1e6L, warn_n12_max=T)
 }
 
 \arguments{
 \item{mat}{
-A 2 by 2 contingency table (matrix). \code{mat[1,1]} and \code{mat[2,1]} denote the numbers of cases among the exposed and unexposed, respectively.
+A 2 by 2 contingency table (matrix). \code{mat[1, 1]} and \code{mat[2, 1]} denote the numbers of cases among the exposed and unexposed, respectively.
 }
 \item{alternative}{
 The alternative hypothesis. Must be one of "two.sided", "greater" or "less".
@@ -30,6 +30,12 @@ A logical argument indicating whether to return the data that can be passed to \
 }
 \item{data_previous}{
 Data output by this function (\code{return_data = T}) that can be used to accelerate the test for another equally sized contingency table (sample sizes of both the exposure groups are the same as before).
+}
+\item{n12_max}{
+If sum(mat[1, ]) * sum(mat[2, ]) > n12_max, this function will return Fisher's \emph{P} value.
+}
+\item{warn_n12_max}{
+Whether to print a warning, if sum(mat[1, ]) * sum(mat[2, ]) > n12_max.
 }
 }
 
