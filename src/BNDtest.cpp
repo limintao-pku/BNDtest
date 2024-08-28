@@ -45,7 +45,7 @@ int which_loc(int loc_i, int loc_j, IntegerVector select_i, IntegerVector select
     return out;
 }
 
-bool in_loc(int loc_i, int loc_j, std::vector<int> select_i, std::vector<int> select_j, int l) {
+bool in_loc(int loc_i, int loc_j, std::vector<int>& select_i, std::vector<int>& select_j, int l) {
     bool out = false;
     for (int i = l - 1; i > -1; --i) {
         if (loc_i == select_i[i]) {
@@ -60,7 +60,7 @@ bool in_loc(int loc_i, int loc_j, std::vector<int> select_i, std::vector<int> se
 
 void get_pmore(int* p_more, int* more_loc_i1, int* more_loc_j1, int* more_loc_i2, int* more_loc_j2,
     int select_i_new, int select_j_new, int n1, int n2,
-    std::vector<int> select_i, std::vector<int> select_j, bool twoside, int k) {
+    std::vector<int>& select_i, std::vector<int>& select_j, bool twoside, int k) {
     int select_i_new1 = select_i_new - 1;
     int select_j_new2 = select_j_new + 1;
 
