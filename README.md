@@ -9,3 +9,6 @@ See how to use this package by running `?Barnard_test`.
 There are other alternative algorithms to determine more extreme tables (e.g., Z-pooled, Z-unpooled, Santner & Snell, and Boschloo; see the "Exact" R package; https://CRAN.R-project.org/package=Exact). The CSM method is often the most powerful.  
 
 We have used this package mainly for unbalanced 2 by 2 tables. The sample size of the smaller exposure group is < 200, and that of the larger group is ~ 2000. The algorithm typically finishes within seconds or minutes. This function can also be used for smaller or larger tables.  
+
+**Citation**: Li M, Gao X, Lin X, et al. Analysis of germline-somatic mutational connections in colorectal cancer reveals differential tumorigenic patterns and a novel predictive marker for germline mutation carriers. Cancer Lett. 2025;620:217637.  
+
